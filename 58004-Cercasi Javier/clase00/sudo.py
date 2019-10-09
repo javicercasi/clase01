@@ -78,8 +78,16 @@ class Sudoku():
         else:
             return False
         
+    
+    def escribir(self,fila,columna,valor):
 
+        if self.general (fila,columna,valor) is True:
 
+            self.matriz[fila][columna] = valor
+            print(self.matriz[fila][columna])
+
+        return (self.matriz[fila][columna])
+        
    
     
 

@@ -17,7 +17,7 @@ class TestSudoku(unittest.TestCase):
         
 
         self.assertTrue(self.game.is_playing) 
-    def test_error(self):
+    def test_error_(self):
 
         self.assertFalse(self.game.valores_fijos(0,0))
         self.assertFalse(self.game.repeticion_fila_columna(0,2,'7'))
@@ -25,7 +25,6 @@ class TestSudoku(unittest.TestCase):
         self.assertFalse(self.game.general(8,6,'8'))
         self.assertFalse(self.game.general(0,0,'8'))
 
-    def test_error(self):
         
 
     def test_valor_disponible(self):
@@ -34,6 +33,22 @@ class TestSudoku(unittest.TestCase):
         self.assertTrue(self.game.repeticion_fila_columna(0,8,'4'))
         self.assertTrue(self.game.repeticion_zona(8,1,'1'))
         self.assertTrue(self.game.repeticion_zona(3,7,'7'))
+
+    def test_ingreso_correcto(self):
+        
+        self.assertTrue(self.game.general(0,7,'1'))
+        self.assertEqual(self.game.escribir(0,7,'1'),'1')
+
+
+    def test_sobreescribir_correcto(self):
+        self.assertEqual(self.game.escribir(0,7,'4'),'4')
+
+    def test_sobreescribir_correcto_2(self):
+        self.assertEqual(self.game.escribir(0,7,'2'),'2')
+
+
+    def test_ingreso_incorrecto_por_repeticion(self):
+        self.assertTrue(self.game.escribir(8,0,'3'),'x')
         
 
 
