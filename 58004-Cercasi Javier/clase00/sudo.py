@@ -53,8 +53,8 @@ class Sudoku():
             for j in range(3):
                 if (self.matriz[fila + i][columna + j] == valor):
                     return False
-                else:
-                    return True
+         
+        return True
 
     def general(self, fila, columna, valor):
         paso = 0
@@ -80,11 +80,12 @@ class Sudoku():
         
     
     def escribir(self,fila,columna,valor):
+        print(self.matriz[fila][columna])
 
-        if self.general (fila,columna,valor) is True:
+        if self.general(fila,columna,valor) is True:
 
             self.matriz[fila][columna] = valor
-            print(self.matriz[fila][columna])
+            
 
         return (self.matriz[fila][columna])
         
