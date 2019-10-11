@@ -37,14 +37,14 @@ class Sudoku():
     def repeticion_zona(self, fila, columna, valor):
         if (fila < 3):
             fila = 0
-        if (fila >= 3 and fila < 6):
+        elif (fila >= 3 and fila < 6):
             fila = 3
         else:
             fila = 6
         
         if (columna < 3):
             columna = 0
-        if (columna >= 3 and columna < 6):
+        elif (columna >= 3 and columna < 6):
             columna = 3
         else:
             columna = 6
@@ -83,14 +83,6 @@ class Sudoku():
         print(self.matriz[fila][columna])
 
         if self.general(fila,columna,valor) is True:
-
             self.matriz[fila][columna] = valor
             
-
         return (self.matriz[fila][columna])
-        
-   
-    
-
-
-
