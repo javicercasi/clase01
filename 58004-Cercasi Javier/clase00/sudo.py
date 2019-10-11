@@ -86,3 +86,10 @@ class Sudoku():
             self.matriz[fila][columna] = valor
             
         return (self.matriz[fila][columna])
+
+    def fin_juego(self):
+         for i in range(9):
+            for j in range(9):
+                if ("x" in self.matriz[i][j]):
+                    return False
+            return True
