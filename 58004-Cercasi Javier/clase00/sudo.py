@@ -93,3 +93,6 @@ class Sudoku():
                 if ("x" in self.matriz[i][j]):
                     return False
             return True
+
+    def tablero (self):
+        
