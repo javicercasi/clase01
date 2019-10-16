@@ -1,4 +1,5 @@
 import copy
+
 class Sudoku():
 
     def __init__(self, tabla):
@@ -80,19 +81,21 @@ class Sudoku():
         
     
     def escribir(self,fila,columna,valor):
-        print(self.matriz[fila][columna])
 
-        if self.general(fila,columna,valor) is True:
+        if self.general(fila,columna,str(valor)) is True:
             self.matriz[fila][columna] = valor
             
         return (self.matriz[fila][columna])
 
     def fin_juego(self):
-         for i in range(9):
-            for j in range(9):
-                if ("x" in self.matriz[i][j]):
+        for i in range(9):
+                if ("x" in self.matriz[i]):
                     return False
-            return True
+            
+        return True
 
     def tablero (self):
-        
+        for i in self.matriz:
+            for j in i:
+                print(j,end=' ')
+            print(" ")
